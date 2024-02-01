@@ -30,9 +30,16 @@
     'kids'
 */
 
-//CODE HERE
+const pizza = {
+    name: `King of Meat`,
+    price: 12.99,
+    category: `entree`,
+    popularity: 2,
+    rating: 4.5,
+    tags: [`hand-tossed`,`deep-dish`, `thin-crust`]
+}
 
-
+console.log(pizza);
 
 //////////////////PROBLEM 2////////////////////
 /* 
