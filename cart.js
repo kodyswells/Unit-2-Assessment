@@ -33,9 +33,11 @@ const cart = [
     }
 ]
 
-//CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((sum,food) => sum + food.price, 0);
+
+console.log(summedPrice);
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,7 +55,13 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (cartTotal,couponValue,tax) => {
+    const totalWithTax = cartTotal + (cartTotal * tax);
+    const finalPrice = totalWithTax - couponValue;
+    return finalPrice;
+}
+
+console.log(calcFinalPrice(15,2,.06));
 
 
 
@@ -78,8 +86,12 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+    Name- It's essential for personalizing the service, for order identification, and for any communication needed with the customer. Use a string because its a textual data.
+    Address - Necessary for delivering orders to the correct location. Use a string because it has multiple string components.
+    Email - For sending order confirmations, promotional materials, and communication regarding their orders or account. Use a string because it contains symbols and characters.
+    Phone - For contacting the customer in case of issues with the order, for delivery confirmations, or for sending SMS notifications. Number or string, but sting would be better because it contains a dash.
+    Order - So the staff and customer know what they are ordering. String because its information in text format.
+    Total Price - So the customer knows how much it's going to cost. Number because its a price.
 */
 
 /*
@@ -87,4 +99,12 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    name: `Kody Wells`,
+    address: `123 N 456 E Orem, Ut`,
+    email: `example@email.com`,
+    phone: `123 456-7890`,
+    order: `pasta`,
+    total: 8.99
+
+};
