@@ -19,7 +19,15 @@
     stored on the object.
 */
 
-//CODE HERE
+class Employee {
+    constructor (name,shifts) {
+        this.name = name;
+        this.shifts = shifts;
+    }
+    getSchedule() {
+        return `${this.name}, works on ${this.shifts}.`;
+    }
+}
 
 
 
@@ -33,14 +41,14 @@
     shifts: weekday mornings, weekday afternoons
 */
 
-//CODE HERE
+const empOne = new Employee (`Kody`, `weekday mornings, weekday afternoons`);
 
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
-//CODE HERE
+console.log(empOne.getSchedule());
 
 
 /*
@@ -55,7 +63,8 @@
     dot or bracket notation.
 */
 
-//CODE HERE
+empTwo = {...empOne, name: `Nick`}
+console.log(empTwo);
 
 
 
@@ -82,9 +91,43 @@
     the employees array. 
 */
 
-//CODE HERE
+//////////////////PROBLEM 2////////////////////
+/*  
+    Write a class called Manager that *extends* 
+    the Employee class. In the constructor, 
+    make sure you require all of the parameters 
+    from the Employee class as well as 1 
+    new one: employees, which will be an array of 
+    employees that report to this manager. 
+    (Hint: don't forget to call the super function)
 
+    Create a method called `getEmployees` that
+    console.logs a string:
+    [NAME] manages [EMPLOYEES]
+    Where NAME and EMPLOYEES reference the values
+    stored on the object.
 
+    Create a second method called `addEmployee`
+    that takes in one argument, `emp`, which
+    should be a string of an employee name.
+    The function should push the name into 
+    the employees array. 
+*/
+
+class Manager extends Employee {
+    constructor(name,shifts,[employee]) {
+        super(name,shifts);
+        this.employee = [employee];
+    }
+    getEmployees() {
+        console.log(`${this.name} manages ${this.employee.join(', and ')}.`);
+    }
+    addEmployee(emp) {
+        this.employee.push(emp);
+    }
+}
+
+    
 
 /*
     Create a new instance of your class.
@@ -97,7 +140,7 @@
     employees: Cece and Schmidt
 */
 
-//CODE HERE
+const manager = new Manager(`Winston`,`weekday mornings, weekday afternoons`, [`Cece and Schmidt`]);
 
 
 /*
@@ -105,7 +148,8 @@
     `manager` object.  
 */
 
-//CODE HERE
+manager.getEmployees();
+
 
 /*
     Call the `addEmployee` method on the 
@@ -113,7 +157,7 @@
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+manager.addEmployee(`Coach`); 
 
 /*
     Call the `getEmployees` method on the
@@ -121,4 +165,5 @@
     that an employee was added.
 */
 
-//CODE HERE
+manager.getEmployees();
+
